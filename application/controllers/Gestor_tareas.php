@@ -39,9 +39,8 @@ class Gestor_tareas extends CI_Controller {
         
         $nombre = $this->input->post('nombre');
         $etiquetas = $this->input->post('etiquetas');
-        $estado = 2;
 
-        $id_tarea = $this->Modelo_tarea->alta($nombre, $estado);
+        $id_tarea = $this->Modelo_tarea->alta($nombre);
 
         foreach($etiquetas as $etiqueta) {
             $this->Modelo_etiqueta_tarea->alta($id_tarea, $etiqueta);

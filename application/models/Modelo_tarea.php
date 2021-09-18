@@ -2,15 +2,13 @@
 class Modelo_tarea extends CI_Model{
     public $id;
     public $nombre;
-    public $estado;
     
     public function __construct(){
         $this->load->database();
     }
 
-    public function alta($nombre, $estado){
+    public function alta($nombre){
         $this->nombre = $nombre;
-        $this->estado = $estado;
        
         $this->db->insert('tareas', $this);
 

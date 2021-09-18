@@ -54,4 +54,3 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['gestor_tareas'] = 'Gestor_tareas';
-$route['gestor_tareas/alta_tarea'] = 'gestor_tareas/alta_tarea';
