@@ -1,0 +1,6 @@
+CREATE TABLE etiquetas ( id INT(11) NOT NULL AUTO_INCREMENT, nombre VARCHAR(50) NOT NULL DEFAULT 'Sin nombre' COLLATE 'utf8mb4_general_ci', PRIMARY KEY (id) USING BTREE ) COMMENT='Posibles etiquetas que puede tener una tarea' COLLATE='utf8mb4_general_ci' ENGINE=InnoDB AUTO_INCREMENT=4 ;
+INSERT INTO etiquetas (id, nombre) VALUES (1, 'PHP'); INSERT INTO etiquetas (id, nombre) VALUES (2, 'Javascript'); INSERT INTO etiquetas (id, nombre) VALUES (3, 'CSS');
+
+CREATE TABLE tareas ( id INT(11) NOT NULL AUTO_INCREMENT, nombre VARCHAR(255) NOT NULL DEFAULT 'Sin nombre' COLLATE 'utf8mb4_general_ci', PRIMARY KEY (id) USING BTREE ) COMMENT='Almacena las atreas a desarrollar' COLLATE='utf8mb4_general_ci' ENGINE=InnoDB AUTO_INCREMENT=9
+
+CREATE TABLE etiquetas_tareas ( id_tarea INT(11) NOT NULL DEFAULT '0', id_etiqueta INT(11) NOT NULL DEFAULT '0', PRIMARY KEY (id_tarea, id_etiqueta) USING BTREE, INDEX fk_etiquetas (id_etiqueta) USING BTREE, CONSTRAINT fk_etiquetas FOREIGN KEY (id_etiqueta) REFERENCES netberry.etiquetas (id) ON UPDATE RESTRICT ON DELETE CASCADE, CONSTRAINT fk_tareas FOREIGN KEY (id_tarea) REFERENCES netberry.tareas (id) ON UPDATE RESTRICT ON DELETE CASCADE ) COMMENT='Las etiquetas que posee una determinada tarea' COLLATE='utf8mb4_general_ci' ENGINE=InnoDB ;
