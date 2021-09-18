@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<form id="alta-formulario">
 						<div class="row">
 							<div class="col-12 d-flex align-items-center">
-								<input type="text" id="nombre" name="nombre" class="form-control mr-4" placeholder="Nueva tarea...">
+								<input type="text" id="nombre" name="nombre" class="form-control mr-4" placeholder="Nueva tarea..." required>
 								<div class="form-check d-flex mr-4">
 									<label class="form-check-label" for="etiqueta-php">PHP</label>
 									<input type="checkbox" class="form-check-input" id="etiqueta-php" name="etiquetas[]" value="1">

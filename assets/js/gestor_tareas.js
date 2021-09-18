@@ -62,7 +62,9 @@ function html_tareas(tareas) {
         html += `<td>${tarea.tarea}</td>`;
         html += '<td>';
         tarea.etiquetas.forEach(function (etiqueta) {
-            html += `<span class="etiqueta">${etiqueta}</span>`;
+            if(etiqueta) {
+                html += `<span class="etiqueta">${etiqueta}</span>`;
+            }
         });
         html += '</td>';
         html += `<td><span class="aspa" onclick="borrar_tarea(${tarea.id})">x</td>`;

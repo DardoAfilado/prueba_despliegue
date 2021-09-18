@@ -42,10 +42,12 @@ class Gestor_tareas extends CI_Controller {
 
         $id_tarea = $this->Modelo_tarea->alta($nombre);
 
-        foreach($etiquetas as $etiqueta) {
-            $this->Modelo_etiqueta_tarea->alta($id_tarea, $etiqueta);
+        if ($etiquetas) {
+            foreach($etiquetas as $etiqueta) {
+                $this->Modelo_etiqueta_tarea->alta($id_tarea, $etiqueta);
+            }
         }
-
+        
         $respuesta = array(
             'mensaje' => 'Alta OK',
         );
