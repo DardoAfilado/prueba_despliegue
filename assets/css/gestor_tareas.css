@@ -1,0 +1,13 @@
+.etiqueta {
+    border: 1px solid black;
+    margin: 2px;
+    padding: 4px;
+    background-color: #c1c6cc;
+}
+
+.aspa {
+    cursor: pointer;
+    font-size: 25px;
+    color: red;
+    font-weight: bold;
+}

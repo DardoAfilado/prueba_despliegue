@@ -7,17 +7,30 @@ class Gestor_tareas extends CI_Controller {
     */
 	public function index()
 	{
-        $data = array (
-            'mensaje' => 'Esto es una prueba'
-        );
-
-		$this->load->view('vista_gestor_tareas', $data);
+		$this->load->view('vista_gestor_tareas', null);
 	}
+
+    public function formatear_tareas($tareas) {
+        $tareas_formateadas = [];
+
+        foreach ($tareas as $tarea) {
+            if(isset($tareas_formateadas[$tarea->tarea])) {
+                array_push($tareas_formateadas[$tarea->tarea], $tarea->etiqueta);
+            }
+            else {
+                $tareas_formateadas[$tarea->tarea] = array ($tarea->etiqueta);
+            }
+        }
+
+        return $tareas_formateadas;
+    }
 
     public function listar_tareas() {
         $this->load->model('Modelo_tarea');
 
-        $tareas = $this->Modelo_tareas->listar();
+        $tareas = $this->Modelo_tarea->listar();
+
+        echo json_encode($tareas);
     }
 
     public function alta_tarea() {
@@ -26,7 +39,7 @@ class Gestor_tareas extends CI_Controller {
         
         $nombre = $this->input->post('nombre');
         $etiquetas = $this->input->post('etiquetas');
-        $estado = 1;
+        $estado = 2;
 
         $id_tarea = $this->Modelo_tarea->alta($nombre, $estado);
 
