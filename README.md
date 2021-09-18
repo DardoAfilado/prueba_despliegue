@@ -1,7 +1,7 @@
 ﻿# prueba_netberry
 
 1. Para el funcionamiento de la aplicación se necesita alojar el proyecto en un servidor Web Apache.
-2. Se ha de crear una DB llamada "netberry" con las siguientes tablas:
+2. Se ha de crear una DB con las siguientes tablas:
 
 _____________________________________________________________________________________________
 TABLA etiquetas
@@ -16,6 +16,10 @@ COLLATE='utf8mb4_general_ci'
 ENGINE=InnoDB
 AUTO_INCREMENT=4
 ;
+
+INSERT INTO `etiquetas` (`id`, `nombre`) VALUES (1, 'PHP');
+INSERT INTO `etiquetas` (`id`, `nombre`) VALUES (2, 'Javascript');
+INSERT INTO `etiquetas` (`id`, `nombre`) VALUES (3, 'CSS');
 _____________________________________________________________________________________________
 TABLA tareas
 
@@ -45,3 +49,5 @@ ENGINE=InnoDB
 ;
 _____________________________________________________________________________________________
 
+3. El fichero de conexión para la DB se encuentra en:
+application\config\database.php
