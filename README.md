@@ -1,7 +1,7 @@
 ﻿# prueba_netberry
 
 1. Para el funcionamiento de la aplicación se necesita alojar el proyecto en un servidor Web Apache.
-2. Se ha de crear una DB llamada "netberry" con las siguientes tablas:
+2. Se ha de crear una DB con las siguientes tablas:
 
 _____________________________________________________________________________________________
 TABLA etiquetas
