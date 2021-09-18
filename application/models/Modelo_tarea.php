@@ -22,7 +22,6 @@ class Modelo_tarea extends CI_Model{
         $this->db->from('tareas');
         $this->db->join('etiquetas_tareas', 'tareas.id = etiquetas_tareas.id_tarea');
         $this->db->join('etiquetas', 'etiquetas_tareas.id_etiqueta = etiquetas.id');
-        $this->db->where('tareas.estado', 2);
         $this->db->order_by('tareas.id');
         $tareas = $this->db->get()->result();
 
