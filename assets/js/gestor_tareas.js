@@ -65,7 +65,7 @@ function html_tareas(tareas) {
             html += `<span class="etiqueta">${etiqueta}</span>`;
         });
         html += '</td>';
-        html += `<td class="aspa" onclick="borrar_tarea(${tarea.id})">x</td>`;
+        html += `<td><span class="aspa" onclick="borrar_tarea(${tarea.id})">x</td>`;
         html += '</tr>';
     }) 
     
@@ -73,5 +73,13 @@ function html_tareas(tareas) {
 }
 
 function borrar_tarea(id) {
-    alert('Se borra ' + id);
+    $.ajax({
+        method: "POST",
+        url: `${base_url}gestor_tareas/baja_tarea`,
+        dataType: 'JSON',
+        data: { id: id },
+        success: function (respuesta) {
+            listar_tareas();
+        }
+    });
 }

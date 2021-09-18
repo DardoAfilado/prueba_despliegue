@@ -28,5 +28,9 @@ class Modelo_tarea extends CI_Model{
 
         return $tareas;
     }
+
+    public function baja($id){
+        $this->db->delete("tareas", array("id" => $id));
+    }
 }
 ?>

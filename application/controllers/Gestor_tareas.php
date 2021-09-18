@@ -48,9 +48,21 @@ class Gestor_tareas extends CI_Controller {
         }
 
         $respuesta = array(
-            'nombre' => $nombre,
-            'etiquetas' => $etiquetas,
-            'id_tarea' => $id_tarea
+            'mensaje' => 'Alta OK',
+        );
+
+        echo json_encode($respuesta);
+    }
+
+    public function baja_tarea() {
+        $this->load->model('Modelo_tarea');
+
+        $id = $this->input->post('id');
+
+        $this->Modelo_tarea->baja($id);
+
+        $respuesta = array(
+            'mensaje' => 'Baja OK',
         );
 
         echo json_encode($respuesta);
